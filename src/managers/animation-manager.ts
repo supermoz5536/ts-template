@@ -32,7 +32,7 @@ export class AnimationManager {
     this.stats.begin();
 
     for (const object of this.objects) {
-      object.update();
+      if (typeof object.update === "function") object.update();
     }
 
     this.stats.end();
